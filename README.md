@@ -65,7 +65,21 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
+
+    The DOM is the document object model. It is a REPRESENTATION of html that is displayed in the document of a page. The DOM is a bridge between the backend and frontend. 
+
 2. What is an event?
+
+    Events are actions or occurances that happen in the script, which the script tells us about so we can respond to them in a certain way. 
+
 3. What is an event listener?
+
+    Event handlers are blocks of code that run when an event is triggered or fired. When such a block of code is defined to run in responce to an event, we say we are registering an event handler.
+
 4. Why would we convert a NodeList into an Array?
+
+    Nodelist is a collection of nodes. For us to have access to array functions, aside from forEach, we must convert it with Array.from().
+
 5. What is a component?
+
+    A component is a piece of software that can be used to create the completed work. Functions can be deconstructed into these parts and allow for better visibility of the pieces.
