@@ -1,4 +1,6 @@
-const Card = (article) => {
+import axios from 'axios';
+
+const Card = ({article}) => {
   // TASK 5
   // ---------------------
   // Implement this function, which should return the markup you see below.
@@ -17,6 +19,30 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+
+  const cardDiv = document.createElement('div');
+    cardDiv.className = 'card';
+  const headlineDiv = document.createElement('div');
+    headlineDiv.className = 'headline';
+  const authorDiv = document.createElement('div');
+    authorDiv.className = 'author';
+  const imgDiv = document.createElement('div');
+    imgDiv.className = 'img-container';
+  const imgItself = document.createElement('img')
+  const nameSpan = document.createElement('span');
+
+  cardDiv.appendChild(headlineDiv);
+  cardDiv.appendChild(authorDiv);
+  authorDiv.appendChild(imgDiv);
+  authorDiv.appendChild(nameSpan);
+  imgDiv.appendChild(imgItself);
+
+  headlineDiv.textContent = article.headline;
+  imgItself.src = article.authorPhoto;
+  nameSpan.textContent = article.authorName;
+  console.log(article.authorPhoto);
+
+  return cardDiv;
 }
 
 const cardAppender = (selector) => {
@@ -28,6 +54,20 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
+  axios.get(`http://localhost:5000/api/articles`)
+    .then(res => {
+      console.log(res.data);
+      console.log(res.data.articles);
+      console.log(res.data.articles.bootstrap);
+
+    }).catch(err => {
+      console.error(err);
+      const errorText = document.createElement('p');
+      errorText.textContent = 'can you get one thing right?'
+      document.body.appendChild(errorText);
+    })
 }
+
+cardAppender(document.querySelector('.cards-container'));
 
 export { Card, cardAppender }

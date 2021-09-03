@@ -46,14 +46,14 @@ const headerAppender = (selector) => {
   //
   const headerElement = Header(title, date, temp);
   // console.log(headerElement);
-  // selector.appendChild(headerElement);
+  selector.appendChild(headerElement);
   // errors but it works! ^^^ WHY? D:<
 
 }
 
 headerAppender(document.querySelector('.header-container'));
-headerAppender(document.querySelector('.header-container'));
-headerAppender(document.querySelector('.header-container'));
+// headerAppender(document.querySelector('.header-container'));
+// headerAppender(document.querySelector('.header-container'));
 
 
 export { Header, headerAppender }
