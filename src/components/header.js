@@ -36,8 +36,6 @@ const Header = (title, date, temp) => {
   return header;
 }
 
-// const selector = document.querySelector('.header-container');
-headerAppender(document.querySelector('.header-container'));
 
 const headerAppender = (selector) => {
   // TASK 2
@@ -47,8 +45,15 @@ const headerAppender = (selector) => {
   // It should append the header to the element in the DOM that matches the given selector.
   //
   const headerElement = Header(title, date, temp);
-  console.log(headerElement);
+  // console.log(headerElement);
+  // selector.appendChild(headerElement);
+  // errors but it works! ^^^ WHY? D:<
 
 }
+
+headerAppender(document.querySelector('.header-container'));
+headerAppender(document.querySelector('.header-container'));
+headerAppender(document.querySelector('.header-container'));
+
 
 export { Header, headerAppender }
