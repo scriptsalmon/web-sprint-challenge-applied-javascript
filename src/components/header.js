@@ -36,7 +36,6 @@ const Header = (title, date, temp) => {
   return header;
 }
 
-
 const headerAppender = (selector) => {
   // TASK 2
   // ---------------------

@@ -58,7 +58,7 @@ const cardAppender = (selector) => {
     .then(res => {
       console.log(res.data);
       console.log(res.data.articles);
-      console.log(res.data.articles.bootstrap);
+      // console.log(res.data.articles.bootstrap);
 
     }).catch(err => {
       console.error(err);
